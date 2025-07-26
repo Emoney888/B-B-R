@@ -11,7 +11,22 @@ def fetch_brett_data():
         "fear_greed_index": 86,
         "altseason_index": 82
     }
+def get_indicator_status():
+    # Simulated 9-indicator status
+    return {
+        "price": True,
+        "volume": True,
+        "dominance": True,
+        "btc_dominance": False,
+        "market_cap": True,
+        "fear_greed": True,
+        "altseason": True,
+        "mvrv_z": False,
+        "nup": False
+    }
 
+def get_current_alignment(status):
+    return sum(status.values()) / len(status)
     # Example indicator logic
     indicators = {
         "Greed > 85": data["fear_greed_index"] > 85,
